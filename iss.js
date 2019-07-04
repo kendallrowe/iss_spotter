@@ -30,7 +30,7 @@ const fetchMyIP = function(callback) {
 };
 
 const fetchCoordsByIP = function(ip, callback) {
-  request("https://ipvigilante.com/8.8.8.8", (error, response, body) => {
+  request("https://ipvigilante.com/" + ip, (error, response, body) => {
     // inside the request callback ...
     // error can be set if invalid domain, user is offline, etc.
     if (error) {
@@ -151,4 +151,4 @@ const nextISSTimesForMyLocation = function(callback) {
   });
 };
 
-module.exports = { nextISSTimesForMyLocation };
+module.exports = { fetchMyIP, fetchCoordsByIP, fetchISSFlyOverTimes, nextISSTimesForMyLocation };
